@@ -1,0 +1,67 @@
+site_name: Programação Backend
+site_description: Site de aulas e materiais didáticos da matéria "Programação Backend"
+site_author: Luccas Alencar
+
+# Repositório (substitua pelo seu)
+repo_name: LuccasAlencar/meu-site-aulas
+repo_url: https://github.com/LuccasAlencar/meu-site-aulas
+
+# Tema
+theme:
+  name: Programação Backend
+  language: pt-BR
+  palette:
+    # Modo claro
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Mudar para modo escuro
+    # Modo escuro
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Mudar para modo claro
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+
+# Plugins
+plugins:
+  - search:
+      lang: pt
+
+# Extensões Markdown
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - admonition
+  - pymdownx.arithmatex:
+      generic: true
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.mark
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+# Navegação
+nav:
+  - Home: index.md
+  - Aulas:
+    - Aula 1 - Introdução: aulas/Aula 1 Introdução ao desenvolvimento back-end.md
+    - Aula 2 - Conceitos Básicos: aulas/Aula 2 Configuração do ambiente de desenvolvimento backend.md
+
