@@ -34,6 +34,7 @@ theme:
     - content.tabs.link
     - content.code.annotation
     - content.code.copy
+    - navigation.footer
 
 # Plugins
 plugins:
@@ -66,3 +67,7 @@ nav:
     - Aula 2 - Configuração do ambiente de desenvolvimento backend: aulas/Aula 2 Configuração do ambiente de desenvolvimento backend.md
     - Aula 3 - Estrutura Básica de uma Aplicação Backend : aulas/Aula 3 Estrutura Básica de uma Aplicação Backend.md
 
+
+
+extra:
+  generator: false
