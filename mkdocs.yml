@@ -63,12 +63,11 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Aulas:
-    - Aula 1 - Introdução ao desenvolvimento backend: aulas/Aula 1 Introdução ao desenvolvimento backend.md
-    - Aula 2 - Configuração do ambiente de desenvolvimento backend: aulas/Aula 2 - Configuração do ambiente de desenvolvimento back-end.md
-    - Aula 3 - Estrutura Básica de uma Aplicação Backend : aulas/Aula 3 - Estrutura Básica de uma Aplicação Backend.md
-    - Aula 4 - Fundamentos de redes e protocolos : aulas/Aula 4 - Fundamentos de redes e protocolos.md
-    - Aula 5 - Segurança em desenvolvimento para web : aulas/Aula 5 - Segurança em desenvolvimento para web.md
-
+    - Aula 1 - Introdução: aulas/Aula 1 Introdução ao desenvolvimento backend.md
+    - Aula 2 - Configuração: aulas/Aula 2 - Configuração do ambiente de desenvolvimento back-end.md
+    - Aula 3 - Estrutura básica: aulas/Aula 3 - Estrutura básica de uma aplicação back-end.md
+    - Aula 4 - Fundamentos: aulas/Aula 4 - Fundamentos de redes e protocolos.md
+    - Aula 5 - Segurança: aulas/Aula 5 -  Segurança em desenvolvimento para web.md
 
 
 extra:
