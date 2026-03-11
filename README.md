@@ -1,6 +1,6 @@
 # Meu Site de Aulas 🎓
 
-Site de aulas criado com MkDocs e Material Theme, hospedado gratuitamente no GitHub Pages.
+Site de aulas criado com MkDocs e Material Theme, hospedado gratuitamente no GitHub Pages
 
 ## 🚀 Como usar este projeto
 
