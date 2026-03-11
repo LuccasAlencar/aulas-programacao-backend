@@ -1,0 +1,1087 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Site de aulas e materiais didáticos da matéria "Programação Backend"">
+      
+      
+        <meta name="author" content="Luccas Alencar">
+      
+      
+      
+        <link rel="prev" href="../aula2/">
+      
+      
+        <link rel="next" href="../aula4/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>Aula 3 - Estrutura Básica de uma Aplicação Backend - Programação Backend</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#aula-3-estrutura-basica-de-uma-aplicacao-back-end" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../.." title="Programação Backend" class="md-header__button md-logo" aria-label="Programação Backend" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Programação Backend
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Aula 3 - Estrutura Básica de uma Aplicação Backend
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Mudar para modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Mudar para modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Mudar para modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Mudar para modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/LuccasAlencar/aulas-programacao-backend" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    LuccasAlencar/aulas-programacao-backend
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../aula1/" class="md-tabs__link">
+          
+  
+  
+  Aulas
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Programação Backend" class="md-nav__button md-logo" aria-label="Programação Backend" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Programação Backend
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/LuccasAlencar/aulas-programacao-backend" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    LuccasAlencar/aulas-programacao-backend
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aulas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Aulas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aula1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aula 1 - Introdução ao desenvolvimento backend
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aula2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aula 2 - Configuração do ambiente de desenvolvimento backend
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aula 3 - Estrutura Básica de uma Aplicação Backend
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aula4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aula 4 - Fundamentos de redes e protocolos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aula5.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aula 1 — O que é um projeto?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aula6.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aula 2 — Ciclo de vida de um projeto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aula7.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aula 3 — Criatividade e geração de ideias
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aula8.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aula 4 — Introdução ao Design Thinking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aula9.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aula 5 — Entendendo o usuário (Empatia)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aula10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aula 6 — Definindo o problema do projeto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="aula-3-estrutura-basica-de-uma-aplicacao-back-end">Aula 3 – Estrutura Básica de uma Aplicação Back-End</h1>
+<p><strong>Componente:</strong> Programação Back-End<br />
+<strong>Unidade:</strong> Introdução à Programação Back-End e Conceitos de Desenvolvimento para Web<br />
+<strong>Duração aproximada:</strong> 50 minutos<br />
+<strong>Ano:</strong> 3º ano do Ensino Médio Técnico (ANO2)</p>
+<hr />
+<h1 id="1-como-o-codigo-back-end-e-organizado">1. Como o código back-end é organizado?</h1>
+<p>Nas aulas anteriores você aprendeu o que é back-end e como configurar o ambiente. Agora vem a próxima pergunta:</p>
+<blockquote>
+<p><strong>Quando um sistema cresce, com dezenas de arquivos e funcionalidades, como não virar um caos?</strong></p>
+</blockquote>
+<p>A resposta é: usando uma <strong>arquitetura</strong> — uma forma padronizada de organizar o código.</p>
+<p>Pense assim:</p>
+<blockquote>
+<p><strong>Uma cozinha sem organização</strong> vira bagunça: ingredientes misturados, pratos em lugares errados. 🍳<br />
+<strong>Uma cozinha organizada</strong> tem cada coisa no seu lugar: despensa, fogão, pia. 🏠</p>
+</blockquote>
+<p>No back-end, a arquitetura mais famosa e usada no mundo é a <strong>MVC</strong>.</p>
+<hr />
+<h1 id="2-o-que-e-mvc">2. O que é MVC?</h1>
+<p><strong>MVC</strong> significa <strong>Model – View – Controller</strong> (Modelo – Visão – Controlador).</p>
+<p>É um padrão que divide a aplicação em <strong>três partes</strong>, cada uma com uma responsabilidade bem clara:</p>
+<table>
+<thead>
+<tr>
+<th>Parte</th>
+<th>Nome em português</th>
+<th>O que faz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Model</strong></td>
+<td>Modelo</td>
+<td>Representa os dados e as regras de negócio</td>
+</tr>
+<tr>
+<td><strong>View</strong></td>
+<td>Visão</td>
+<td>Formata e apresenta a resposta ao usuário</td>
+</tr>
+<tr>
+<td><strong>Controller</strong></td>
+<td>Controlador</td>
+<td>Recebe a requisição, coordena Model e View</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>💡 <strong>Cada parte cuida de uma coisa só.</strong> Isso é o princípio da responsabilidade única — e é uma das boas práticas mais importantes no desenvolvimento de software.</p>
+</blockquote>
+<hr />
+<h1 id="3-entendendo-cada-parte-com-um-exemplo-real">3. Entendendo cada parte com um exemplo real</h1>
+<p>Imagine um sistema de <strong>cadastro de usuários</strong> de uma escola. Veja como o MVC funciona nesse contexto:</p>
+<h3 id="model-os-dados">🗄️ Model — Os dados</h3>
+<p>O Model define a <strong>estrutura dos dados</strong> e as <strong>regras sobre eles</strong>.</p>
+<p>Exemplo: o que é um "usuário" no sistema?
+- nome
+- e-mail
+- senha
+- data de cadastro</p>
+<p>O Model também garante regras como: <em>"o e-mail não pode se repetir"</em> ou <em>"a senha precisa ter pelo menos 8 caracteres"</em>.</p>
+<hr />
+<h3 id="view-a-resposta-formatada">🖥️ View — A resposta formatada</h3>
+<p>No back-end, a View não é uma tela visual — é a <strong>formatação da resposta</strong> que será enviada para o front-end ou para outro sistema.</p>
+<p>Exemplo: quando o cadastro é feito com sucesso, a View decide como informar isso:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>{
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  &quot;mensagem&quot;: &quot;Usuário cadastrado com sucesso!&quot;,
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  &quot;id&quot;: 42
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>}
+</code></pre></div>
+<hr />
+<h3 id="controller-o-intermediario">⚙️ Controller — O intermediário</h3>
+<p>O Controller é o <strong>cérebro da operação</strong>. Ele:
+1. Recebe a requisição do usuário
+2. Chama o Model para manipular os dados
+3. Chama a View para formatar a resposta
+4. Devolve a resposta final</p>
+<blockquote>
+<p>🍕 <strong>Analogia:</strong> Se o sistema fosse um restaurante, o Controller seria o garçom — recebe o pedido, leva para a cozinha (Model), e traz o prato formatado (View) para o cliente.</p>
+</blockquote>
+<hr />
+<h1 id="4-o-fluxo-mvc-na-pratica">4. O Fluxo MVC na prática</h1>
+<p>Veja como uma requisição percorre as três camadas:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Usuário faz uma requisição
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>        ↓
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>   [CONTROLLER]
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>   Recebe e coordena
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        ↓              ↓
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    [MODEL]          [VIEW]
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>  Busca/salva      Formata a
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    os dados        resposta
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>        ↓              ↓
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>   [CONTROLLER]
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>   Une tudo e responde
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>        ↓
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>  Resposta chega ao usuário
+</code></pre></div>
+<hr />
+<h1 id="5-a-estrutura-de-pastas-de-um-projeto-mvc">5. A Estrutura de Pastas de um Projeto MVC</h1>
+<p>Uma das grandes vantagens do MVC é que ele define como <strong>organizar os arquivos</strong> do projeto. Veja um exemplo de estrutura de pastas:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>UserManagement/
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>│
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>├── models/
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>│   └── userModel.js       ← define os dados do usuário
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>│
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>├── views/
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>│   └── userView.js        ← formata as respostas
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>│
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>├── controllers/
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>│   └── userController.js  ← lógica das requisições
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>│
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>└── index.js               ← ponto de entrada da aplicação
+</code></pre></div>
+<blockquote>
+<p>📝 <strong>Regra de ouro:</strong> Se alguém novo entrar no projeto, deve conseguir entender onde cada coisa está só olhando a estrutura de pastas.</p>
+</blockquote>
+<hr />
+<h1 id="6-atividade-1-responda-no-caderno">6. Atividade 1 – Responda no Caderno</h1>
+<ol>
+<li>O que significa a sigla MVC?</li>
+<li>Qual parte do MVC é responsável pelos dados e pelas regras de negócio?</li>
+<li>O que o Controller faz?</li>
+<li>Por que organizar o código em camadas é uma boa prática?</li>
+</ol>
+<hr />
+<h1 id="7-por-que-usar-mvc">7. Por que usar MVC?</h1>
+<table>
+<thead>
+<tr>
+<th>Sem MVC</th>
+<th>Com MVC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Código misturado e difícil de ler</td>
+<td>Cada responsabilidade no lugar certo</td>
+</tr>
+<tr>
+<td>Difícil de encontrar bugs</td>
+<td>Fácil de identificar onde está o problema</td>
+</tr>
+<tr>
+<td>Complicado trabalhar em equipe</td>
+<td>Vários devs podem trabalhar em partes diferentes</td>
+</tr>
+<tr>
+<td>Difícil de expandir o sistema</td>
+<td>Fácil de adicionar novas funcionalidades</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>🤝 <strong>Cooperação:</strong> O MVC facilita o trabalho em equipe porque um desenvolvedor pode mexer no Model sem interferir no trabalho de outro que está no Controller. Cada um cuida da sua parte!</p>
+</blockquote>
+<hr />
+<h1 id="8-atividade-principal-desenhando-seu-mvc-no-caderno">8. Atividade Principal – Desenhando seu MVC no Caderno</h1>
+<h3 id="situacao">Situação:</h3>
+<p>Você foi designado(a) para criar a estrutura back-end de um <strong>sistema de biblioteca escolar</strong>. O sistema deve permitir: cadastrar livros, buscar livros e registrar empréstimos.</p>
+<h3 id="sua-tarefa">Sua tarefa:</h3>
+<p><strong>Parte A — Estrutura de pastas</strong></p>
+<p>Desenhe no caderno a estrutura de pastas do projeto seguindo o padrão MVC. Crie pelo menos um arquivo dentro de cada pasta.</p>
+<p><strong>Parte B — Responsabilidades</strong></p>
+<p>Preencha a tabela abaixo no caderno:</p>
+<table>
+<thead>
+<tr>
+<th>Funcionalidade</th>
+<th>Qual parte do MVC?</th>
+<th>Por quê?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Guardar os dados de um livro (título, autor, ISBN)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Receber a requisição "buscar livro por título"</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Formatar a lista de livros para enviar como resposta</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Verificar se o livro já está emprestado</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Parte C — Reflexão</strong></p>
+<p>Responda no caderno:
+1. Como o MVC ajuda a manter o código organizado e escalável?
+2. O que aconteceria se colocássemos toda a lógica em um único arquivo?</p>
+<hr />
+<h3 id="gabarito-esperado">Gabarito esperado:</h3>
+<p><strong>Parte A — Estrutura sugerida:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>BibliotecaEscolar/
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>├── models/
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>│   ├── livroModel.js
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>│   └── emprestimoModel.js
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>├── views/
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>│   └── livroView.js
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>├── controllers/
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>│   ├── livroController.js
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>│   └── emprestimoController.js
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>└── index.js
+</code></pre></div></p>
+<p><strong>Parte B — Tabela:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Funcionalidade</th>
+<th>Qual parte do MVC?</th>
+<th>Por quê?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Guardar dados de um livro</td>
+<td><strong>Model</strong></td>
+<td>É a estrutura dos dados</td>
+</tr>
+<tr>
+<td>Receber requisição de busca</td>
+<td><strong>Controller</strong></td>
+<td>Coordena a operação</td>
+</tr>
+<tr>
+<td>Formatar lista de livros</td>
+<td><strong>View</strong></td>
+<td>Apresenta os dados</td>
+</tr>
+<tr>
+<td>Verificar se livro está emprestado</td>
+<td><strong>Model</strong></td>
+<td>É uma regra de negócio</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Parte C:</strong> O MVC separa as responsabilidades, tornando mais fácil manter e expandir o sistema. Sem essa separação, um único arquivo enorme ficaria impossível de entender, testar e modificar com segurança.</p>
+<hr />
+<h1 id="9-revisao-o-que-aprendemos-hoje">9. Revisão – O que aprendemos hoje?</h1>
+<p>✔ O que é a arquitetura MVC e para que serve<br />
+✔ O papel de cada camada: Model, View e Controller<br />
+✔ Como organizar a estrutura de pastas de um projeto back-end<br />
+✔ Por que separar responsabilidades torna o código melhor<br />
+✔ Como o MVC facilita o trabalho em equipe</p>
+<hr />
+<h1 id="10-para-aprender-mais">10. Para aprender mais</h1>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=mMDt9g7bMjk">O que é MVC? (Código Fonte TV)</a></li>
+<li><a href="https://www.alura.com.br/artigos/mvc-arquitetura">Arquitetura MVC explicada (Alura)</a></li>
+<li><a href="https://www.youtube.com/watch?v=GUanHEGlje4">Boas práticas de programação com Fabio Akita</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
+        
+          
+          <a href="../aula2/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Aula 2 - Configuração do ambiente de desenvolvimento backend">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Aula 2 - Configuração do ambiente de desenvolvimento backend
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../aula4/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Aula 4 - Fundamentos de redes e protocolos">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              <div class="md-ellipsis">
+                Aula 4 - Fundamentos de redes e protocolos
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "navigation.footer"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
